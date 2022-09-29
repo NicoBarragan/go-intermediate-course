@@ -4,6 +4,7 @@ import "fmt"
 
 /* SMS and Email notification msg sending */
 
+// interface that defines how must be composed
 type INotificationFactory interface {
 	SendNotification()
 	GetSender() ISender
@@ -33,4 +34,26 @@ func (SMSNotificationSender) GetSenderMethod() string {
 
 func (SMSNotificationSender) GetSenderChannel() string {
 	return "Twilio"
+}
+
+type EmailNotification struct {
+}
+
+func (EmailNotification) SendNotification() {
+	fmt.Println("Sending notification via email")
+}
+
+type EmailNotificationSender struct {
+}
+
+func (EmailNotificationSender) GetSender() ISender {
+	return EmailNotificationSender{}
+}
+
+func (EmailNotificationSender) GetSenderMethod() string {
+	return "Email"
+}
+
+func (EmailNotificationSender) GetSenderChannel() string {
+	return "SES"
 }
