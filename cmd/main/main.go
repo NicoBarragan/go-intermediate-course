@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/NicoBarragan/go-intermediate-course/pkg/composition"
+	"github.com/NicoBarragan/go-intermediate-course/pkg/factory"
 )
 
 func main() {
@@ -20,4 +21,8 @@ func main() {
 
 	fmt.Println("startWorking: ", startWorking)
 	fmt.Println("endWorking: ", endWorking)
+
+	fmt.Println("-------------")
+
+	factory.Factory()
 }
