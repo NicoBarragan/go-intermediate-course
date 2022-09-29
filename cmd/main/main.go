@@ -5,6 +5,7 @@ import (
 
 	"github.com/NicoBarragan/go-intermediate-course/pkg/composition"
 	"github.com/NicoBarragan/go-intermediate-course/pkg/factory"
+	"github.com/NicoBarragan/go-intermediate-course/pkg/functions"
 )
 
 func main() {
@@ -25,4 +26,8 @@ func main() {
 	fmt.Println("-------------")
 
 	factory.Factory()
+
+	fmt.Println("-------------")
+	functions.Functions()
+
 }
