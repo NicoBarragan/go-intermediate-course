@@ -51,7 +51,7 @@ type EmailNotification struct {
 
 // Create first INotificationSender func
 func (EmailNotification) SendNotification() {
-	fmt.Println("Sending notification via email")
+	fmt.Println("Sending notification via Email")
 }
 
 // Create the struct that will implement the ISender func's
@@ -96,7 +96,12 @@ func sendNotification(f INotificationFactory) {
 
 // Gets the method of the sender from the factory that is passed
 func getMethod(f INotificationFactory) {
-	fmt.Println(f.GetSender().GetSenderMethod())
+	fmt.Printf("Method of sender is: %s\n", f.GetSender().GetSenderMethod())
+}
+
+// Gets the channel of the sender from the factory that is passed
+func getChannel(f INotificationFactory) {
+	fmt.Printf("Channel of sender is: %s\n", f.GetSender().GetSenderChannel())
 }
 
 // Declares both SMS and Email factories and executes their methods (public func)
@@ -109,4 +114,7 @@ func Factory() {
 
 	getMethod(smsFactory)
 	getMethod(emailFactory)
+
+	getChannel(smsFactory)
+	getChannel(emailFactory)
 }
